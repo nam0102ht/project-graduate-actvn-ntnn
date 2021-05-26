@@ -7,5 +7,6 @@ public class Main {
         Vertx vertx = Vertx.vertx();
         vertx.deployVerticle(new MainApiFunction());
         vertx.deployVerticle(new AuthEventBus());
+        vertx.deployVerticle(new BalanceEventBus());
     }
 }

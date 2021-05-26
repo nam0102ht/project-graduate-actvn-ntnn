@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.ntnn.grpc.atm";
+option java_outer_classname = "ApiBalanceProto";
+option objc_class_prefix = "HLM";
+package apiBalance;
+
+service ApiBalance {
+  rpc withdrawal (Request) returns (Response) {}
+}
+
+// The request message containing the key
+
+message Request {
+  int32 errorCode = 1;
+  string message = 2;
+  bool result = 3;
+  string data = 4;
+}
+
+message Response {
+  int32 errorCode = 1;
+  string message = 2;
+  bool result = 3;
+  string data = 4;
+}

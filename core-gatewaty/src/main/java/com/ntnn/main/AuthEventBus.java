@@ -6,7 +6,6 @@ import com.ntnn.grpc.auth.Response;
 import io.grpc.ManagedChannel;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Promise;
-import io.vertx.core.json.Json;
 import io.vertx.core.json.JsonObject;
 import io.vertx.grpc.VertxChannelBuilder;
 import lombok.extern.log4j.Log4j2;

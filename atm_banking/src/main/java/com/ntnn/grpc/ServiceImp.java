@@ -6,7 +6,6 @@ import com.ntnn.utils.argon2.Agron2Utils;
 import com.ntnn.utils.dao.UserDAO;
 import com.ntnn.utils.jwt.JwtUtils;
 import com.ntnn.utils.utils.BackendError;
-import com.ntnn.utils.utils.DefineISOMsg;
 import com.ntnn.utils.utils.ISOFieldUtils;
 import com.ntnn.utils.utils.ISOMsgUtils;
 import io.grpc.stub.StreamObserver;
@@ -101,11 +100,16 @@ public class ServiceImp extends com.ntnn.authS.AuthApiGrpc.AuthApiImplBase {
                     .put("cardNumber", cardNumber)
                     .put("name", joUserGetDB.getString("name", ""));
             String token = JwtUtils.jwt(this.vertx, objToken);
+            JsonObject dataResponse = new JsonObject()
+                    .put("errorCode", BackendError.SUCCESS)
+                    .put("message", "Withdrawal success")
+                    .put("status", true)
+                    .put("data", (new JsonObject().put("token", token)).toString());
             Response res = Response.newBuilder()
                     .setResult(true)
                     .setErrorCode(BackendError.SUCCESS)
                     .setMessage("Access pin success")
-                    .setData((new JsonObject().put("token", token)).toString())
+                    .setData(dataResponse.toString())
                     .build();
             responseObserver.onNext(res);
             responseObserver.onCompleted();

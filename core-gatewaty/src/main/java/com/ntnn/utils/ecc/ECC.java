@@ -147,12 +147,12 @@ public class ECC {
         KeyPair keys = generateKeyPair(c);
         // encrypt the msg
         int[] cipherText = ecc.encrypt(msg, keys.getPublicKey());
-        System.out.println("5) Alice send this to Bob:");
+        System.out.println(""+keys.getPublicKey().toString());
         Helpers.print(cipherText);
 
         // decrypt the result
         String plainText = ecc.decrypt(cipherText, keys.getPrivateKey());
-        System.out.println("\n5) Translate each point to a carracter");
+        System.out.println(""+keys.getPrivateKey());
 
         //System.out.println("Cipher : ");
         //Helpers.print(cipherText);

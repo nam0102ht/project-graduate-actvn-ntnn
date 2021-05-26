@@ -32,6 +32,17 @@ dependencies {
     compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.14.1'
     compile group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.14.1'
     compile 'io.vertx:vertx-web:3.9.7'
+    // https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk16
+    implementation group: 'org.bouncycastle', name: 'bcprov-jdk15on', version: '1.68'
+    compile 'com.madgag.spongycastle:core:1.54.0.0'
+    compile 'com.madgag.spongycastle:prov:1.54.0.0'
+    compile 'com.madgag.spongycastle:pkix:1.54.0.0'
+    compile 'com.madgag.spongycastle:pg:1.54.0.0'
+    // https://mvnrepository.com/artifact/commons-codec/commons-codec
+    implementation group: 'commons-codec', name: 'commons-codec', version: '1.9'
+
+
+
     // https://mvnrepository.com/artifact/org.json/json
     implementation group: 'org.json', name: 'json', version: '20210307'
     // https://mvnrepository.com/artifact/de.mkammerer/argon2-jvm
