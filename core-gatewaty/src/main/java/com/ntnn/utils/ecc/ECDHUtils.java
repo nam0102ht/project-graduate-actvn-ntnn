@@ -78,9 +78,12 @@ public class ECDHUtils {
                 "YiHNC9+E7GRqH6uobJtVpsTEYwaUeClx/w==\n" +
                 "-----END EC PRIVATE KEY-----");
         Object parsedServer = new PEMParser(rdrServer).readObject();
-        PrivateKey keyPairServer = new JcaPEMKeyConverter().getPrivateKey((((PEMKeyPair) parsedServer).getPrivateKeyInfo()));
+        PrivateKey keyPairServer = new JcaPEMKeyConverter()
+                .getPrivateKey((((PEMKeyPair) parsedServer)
+                        .getPrivateKeyInfo()));
         Object parsedClient = new PEMParser(rdrClient).readObject();
-        PublicKey keyPairClient = new JcaPEMKeyConverter().getPublicKey((SubjectPublicKeyInfo) parsedClient);
+        PublicKey keyPairClient = new JcaPEMKeyConverter()
+                .getPublicKey((SubjectPublicKeyInfo) parsedClient);
         SecretKey secretKey = generateSharedSecret(keyPairServer, keyPairClient);
         return decryptString(secretKey, cipherText, randomSpec);
     }

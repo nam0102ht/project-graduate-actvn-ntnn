@@ -24,7 +24,6 @@ def grpcVersion = '1.1.2' // CURRENT_GRPC_VERSION
 
 dependencies {
     // https://mvnrepository.com/artifact/com.google.protobuf/protobuf-gradle-plugin
-
     compile 'io.vertx:vertx-auth-jwt:3.9.7'
     compileOnly 'org.projectlombok:lombok:1.18.20'
     compile 'io.vertx:vertx-jdbc-client:3.9.7'
